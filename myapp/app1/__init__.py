@@ -16,3 +16,5 @@ def create_app1():
         compile_static_assets
         return app
 
+
+
