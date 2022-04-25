@@ -21,7 +21,7 @@ def create_app():
         # Register Blueprints
         app.register_blueprint(home.home_bp)
         app.register_blueprint(app1.app1_bp, url_prefix='/app1')
-        app1_bp.register_blueprint(subapp1a_bp, url_prefix='/subapp1a')
+        #app1_bp.register_blueprint(subapp1a_bp, url_prefix='/subapp1a')
         app.register_blueprint(app2.app2_bp)
         # End of bp registration
         # Compile
