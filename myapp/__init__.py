@@ -1,9 +1,13 @@
 """Initialize Flask app."""
-from flask import Flask
+from flask import Blueprint, Flask, url_for
+from .app1 import app1
+
 #from flask import Flask, redirect, url_for
 #from . import config
 
 from flask_assets import Environment
+
+bp = Blueprint('main', __name__)
 
 def create_app():
     """Create Flask application."""
@@ -20,7 +24,10 @@ def create_app():
         # End of imports
         # Register Blueprints
         app.register_blueprint(home.home_bp)
-        app.register_blueprint(app1.app1_bp, url_prefix='/app1')
+        app1.app1_bp.register_blueprint(app1.subapp1a.subapp1a_bp, url_prefix='/subapp1a')
+        bp.register_blueprint(app1.app1_bp, url_prefix='/app1')
+        app.register_blueprint(bp)
+        #app.register_blueprint(app1.app1_bp, url_prefix='/app1')
         #app1_bp.register_blueprint(subapp1a_bp, url_prefix='/subapp1a')
         app.register_blueprint(app2.app2_bp)
         # End of bp registration
@@ -30,3 +37,6 @@ def create_app():
 
 
 
+#app1.app1_bp.register_blueprint(app1.subapp1a.subapp1a_bp, url_prefix='/subapp1a')
+#bp.register_blueprint(app1.app1_bp, url_prefix='/app1')
+#app.register_blueprint(bp)

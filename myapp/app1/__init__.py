@@ -14,7 +14,7 @@ def create_app1():
         app1.register_blueprint(subapp1a.subapp1a_bp)
         #app.register_blueprint(app1.app1_bp)
         compile_static_assets
-        return app
+        return app1
 
 
 

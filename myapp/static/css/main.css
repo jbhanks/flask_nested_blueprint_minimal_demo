@@ -1,0 +1,10 @@
+ body {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  background: -webkit-linear-gradient(top, #50A7B8 0%, #50A7B8 400px, #51BDA4 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #50A7B8 0%, #50A7B8 400px, #51BDA4 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#cedce7", endColorstr="#596a72",GradientType=0 );
+}
